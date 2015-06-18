@@ -1,3 +1,3 @@
 # cordova-plugin
 
-OK
+Nuevos cambios
