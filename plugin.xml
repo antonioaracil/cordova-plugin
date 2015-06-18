@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        id="com.antonioaracil.workshop"
+        version="0.0.1">
+
+<name>Custom Camera</name>
+<description>Cordova plugin to check an action with a passcode</description>
+<author>Antonio Aracil and others</author>
+
+<info>
+    This plugin was written with the tutorials found at:
+    http://codrspace.com/vote539/writing-a-custom-camera-plugin-for-phonegap/
+    http://ccoenraets.github.io/cordova-tutorial/camera-api.html
+</info>
+
+<js-module src="www/js/custom_plugin.js" name="CustomPlugin">
+    <clobbers target="navigator.CustomPlugin" />
+</js-module>
+
+<engines>
+    <engine name="cordova" version=">=3.8.0" />
+</engines>
+
+<platform name="ios">
+
+    <!-- config file -->
+    <config-file target="config.xml" parent="/*">
+        <feature name="CustomPlugin">
+            <param name="ios-package" value="CustomPlugin" />
+        </feature>
+    </config-file>
+
+    <!-- core CustomPlugin header and source files -->
+    <header-file src="platforms/ios/Workshop/Classes/CustomPlugin.h" />
+    <header-file src="platforms/ios/Workshop/Classes/CustomPluginViewController.h" />
+    <source-file src="platforms/ios/Workshop/Classes/CustomPlugin.m" />
+    <source-file src="platforms/ios/Workshop/Classes/CustomPluginViewController.m" />
+    <resource-file src="platforms/ios/Workshop/Classes/CustomPluginViewController.xib" />
+
+</platform>
+
+</plugin>
